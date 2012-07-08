@@ -939,7 +939,9 @@ config FB_S1D13XXX
 
 config FB_ATMEL
 	tristate "AT91/AT32 LCD Controller support"
-	depends on FB && (ARCH_AT91SAM9261 || ARCH_AT91SAM9G10 || ARCH_AT91SAM9263 || ARCH_AT91SAM9RL || ARCH_AT91SAM9G45 || ARCH_AT91CAP9 || AVR32)
+	depends on FB && (ARCH_AT91SAM9261 || ARCH_AT91SAM9G10 || ARCH_AT91SAM9263 || ARCH_AT91SAM9RL || ARCH_AT91SAM9G45 
+
+|| ARCH_AT91CAP9 || AVR32)
 	select FB_CFB_FILLRECT
 	select FB_CFB_COPYAREA
 	select FB_CFB_IMAGEBLIT
@@ -2378,6 +2380,13 @@ config FB_MSM_MDDI_SHARP_QVGA_128x128
 	select FB_MSM_MDDI
 	---help---
 	  Support for MDDI Sharp QVGA (240x320) and 128x128 dual panel
+
+	
+config FB_MSM_MDDI_SWIFT
+       bool "MDDI LG GT540 Swift(Optimus)"
+       select FB_MSM_MDDI 
+       ---help---	
+         Support for MDDI LG GT540 Swift(Optimus) 
 
 config FB_MSM_MIPI_TOSHIBA_VIDEO_WVGA_PT
 	bool "MIPI Toshiba WVGA PT Panel"
